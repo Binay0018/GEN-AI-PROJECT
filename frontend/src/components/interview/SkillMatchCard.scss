@@ -1,0 +1,62 @@
+@use '../../styles/variables' as *;
+
+.skill-match-card {
+  padding: 1.5rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+
+  &__score {
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    &--high { color: $color-success; }
+    &--mid { color: $color-warning; }
+    &--low { color: $color-danger; }
+  }
+
+  &__bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: $radius-full;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+  }
+
+  &__bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, $color-primary, $color-secondary);
+    border-radius: $radius-full;
+    transition: width 1s ease;
+  }
+
+  &__gaps-label {
+    font-size: 0.8125rem;
+    color: $text-muted;
+    margin-bottom: 0.625rem;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba($color-danger, 0.1);
+    color: #f87171;
+    border: 1px solid rgba($color-danger, 0.2);
+    border-radius: $radius-full;
+  }
+}

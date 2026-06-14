@@ -1,0 +1,110 @@
+@use '../../styles/variables' as *;
+
+.resume-uploader {
+  &__dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 2rem 1.5rem;
+    border: 2px dashed $border-color;
+    border-radius: $radius-lg;
+    cursor: pointer;
+    transition: all $transition-base;
+    min-height: 160px;
+
+    &:hover,
+    &--active {
+      border-color: rgba($color-primary, 0.5);
+      background: rgba($color-primary, 0.05);
+    }
+
+    &--has-file {
+      border-style: solid;
+      border-color: rgba($color-success, 0.3);
+      background: rgba($color-success, 0.05);
+    }
+
+    &--error {
+      border-color: rgba($color-danger, 0.5);
+    }
+  }
+
+  &__icon {
+    font-size: 2rem;
+    color: $text-muted;
+  }
+
+  &__title {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: $text-primary;
+  }
+
+  &__subtitle {
+    font-size: 0.8125rem;
+    color: $text-muted;
+  }
+
+  &__preview {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  &__file-icon {
+    font-size: 2rem;
+    color: $color-danger;
+    flex-shrink: 0;
+  }
+
+  &__file-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    min-width: 0;
+  }
+
+  &__file-name {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__file-size {
+    font-size: 0.8125rem;
+    color: $text-muted;
+  }
+
+  &__remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background: $bg-card;
+    border: none;
+    border-radius: $radius-sm;
+    color: $text-secondary;
+    cursor: pointer;
+    font-size: 1.125rem;
+    flex-shrink: 0;
+
+    &:hover {
+      background: rgba($color-danger, 0.15);
+      color: $color-danger;
+    }
+  }
+
+  &__error {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.8125rem;
+    color: $color-danger;
+  }
+}

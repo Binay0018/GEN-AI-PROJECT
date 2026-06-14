@@ -12,11 +12,18 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@google/genai": "^2.8.0",
     "cookie-parser": "^1.4.7",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "mongoose": "^9.7.0",
+    "multer": "^2.1.1",
     "nodemon": "^3.1.14",
-    "redis": "^6.0.0"
+    "pdf-parse": "^2.4.5",
+    "pdf2json": "^4.0.3",
+    "pdfjs-dist": "^6.0.227",
+    "redis": "^6.0.0",
+    "zod": "^4.4.3",
+    "zod-to-json-schema": "^3.25.2"
   }
 }

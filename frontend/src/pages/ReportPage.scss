@@ -1,0 +1,159 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.report-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+
+  &--loading,
+  &--empty {
+    @include flex-center;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 60vh;
+    text-align: center;
+
+    h2 { font-size: 1.5rem; }
+    p { color: $text-secondary; max-width: 400px; }
+  }
+
+  &__layout {
+    display: flex;
+    gap: 2rem;
+
+    @media (max-width: $breakpoint-lg) {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__scores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__gaps {
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__gap-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__gap {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.8125rem;
+    padding: 0.375rem 0.75rem;
+    border-radius: $radius-full;
+    border: 1px solid $border-color;
+
+    small {
+      font-size: 0.6875rem;
+      opacity: 0.7;
+    }
+
+    &--high {
+      background: rgba($color-danger, 0.1);
+      border-color: rgba($color-danger, 0.25);
+      color: #f87171;
+    }
+
+    &--medium {
+      background: rgba($color-warning, 0.1);
+      border-color: rgba($color-warning, 0.25);
+      color: #fbbf24;
+    }
+
+    &--low {
+      background: rgba($color-success, 0.1);
+      border-color: rgba($color-success, 0.25);
+      color: #4ade80;
+    }
+  }
+
+  &__roadmap-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+
+    h3 { font-size: 1.125rem; font-weight: 600; }
+    span { font-size: 0.8125rem; color: $text-muted; }
+  }
+
+  &__roadmap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.roadmap-day {
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &__badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.625rem;
+    background: rgba($color-primary, 0.12);
+    color: $color-primary;
+    border-radius: $radius-sm;
+  }
+
+  h4 {
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  li {
+    font-size: 0.875rem;
+    color: $text-secondary;
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.5;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: $color-primary;
+    }
+  }
+}

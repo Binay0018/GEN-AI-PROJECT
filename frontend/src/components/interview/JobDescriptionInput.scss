@@ -1,0 +1,42 @@
+@use '../../styles/variables' as *;
+
+.job-input {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  &__icon {
+    font-size: 1.25rem;
+    color: $color-primary;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  &__badge {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.125rem 0.5rem;
+    background: rgba($color-primary, 0.15);
+    color: $color-primary;
+    border-radius: $radius-full;
+    margin-top: 0.25rem;
+  }
+
+  &__textarea .textarea-field__input {
+    min-height: 360px;
+    flex: 1;
+  }
+}

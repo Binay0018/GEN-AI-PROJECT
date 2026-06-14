@@ -1,0 +1,14 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.card {
+  @include glass-card;
+
+  &--padding-sm { padding: 1rem; }
+  &--padding-md { padding: 1.5rem; }
+  &--padding-lg { padding: 2rem; }
+
+  &--hover {
+    @include glass-card-hover;
+  }
+}

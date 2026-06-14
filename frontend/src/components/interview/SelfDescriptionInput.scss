@@ -1,0 +1,29 @@
+@use '../../styles/variables' as *;
+
+.self-input {
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &__icon {
+    font-size: 1.25rem;
+    color: $color-secondary;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  &__hint {
+    font-size: 0.75rem;
+    color: $text-muted;
+  }
+
+  &__textarea .textarea-field__input {
+    min-height: 120px;
+  }
+}

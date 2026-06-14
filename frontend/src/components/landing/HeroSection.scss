@@ -1,0 +1,106 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.hero {
+  position: relative;
+  padding: 6rem 1.5rem 4rem;
+  text-align: center;
+  overflow: hidden;
+
+  &__glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+
+    &--1 {
+      width: 500px;
+      height: 500px;
+      background: rgba($color-primary, 0.15);
+      top: -100px;
+      left: 50%;
+      transform: translateX(-70%);
+    }
+
+    &--2 {
+      width: 400px;
+      height: 400px;
+      background: rgba($color-secondary, 0.12);
+      top: 50px;
+      right: 10%;
+    }
+  }
+
+  &__content {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 1rem;
+    background: $bg-card;
+    border: 1px solid $border-color;
+    border-radius: $radius-full;
+    font-size: 0.8125rem;
+    color: $text-secondary;
+    margin-bottom: 1.5rem;
+
+    svg { color: $color-primary; }
+  }
+
+  &__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+  }
+
+  &__gradient {
+    @include gradient-text;
+  }
+
+  &__subtitle {
+    font-size: 1.125rem;
+    color: $text-secondary;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  &__stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    strong {
+      font-size: 1.5rem;
+      font-weight: 700;
+      @include gradient-text;
+    }
+
+    span {
+      font-size: 0.8125rem;
+      color: $text-muted;
+    }
+  }
+}

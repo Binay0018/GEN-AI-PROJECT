@@ -1,0 +1,50 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $text-secondary;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+    color: $text-primary;
+    font-family: $font-family;
+    font-size: 0.9375rem;
+    transition: border-color $transition-base, box-shadow $transition-base;
+    @include focus-ring;
+
+    &::placeholder {
+      color: $text-muted;
+    }
+
+    &:focus {
+      border-color: $border-focus;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+  }
+
+  &--error &__input {
+    border-color: rgba($color-danger, 0.5);
+  }
+
+  &__error {
+    font-size: 0.8125rem;
+    color: $color-danger;
+  }
+
+  &__hint {
+    font-size: 0.8125rem;
+    color: $text-muted;
+  }
+}

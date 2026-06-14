@@ -5,18 +5,19 @@ main {
     justify-content: center;
     align-items: center;
 
-
-    .form-container{
+    .form-container {
         min-width: 350px;
         display: flex;
         flex-direction: column;
         gap: 1rem;
     }
-    form{
+
+    form {
         display: flex;
         flex-direction: column;
         gap: 0.95rem;
     }
+
     .input-group {
         display: flex;
         flex-direction: column;
@@ -42,8 +43,12 @@ main {
         }
     }
 
-    a{
-        color: #ed1963;
+    a {
+        color: #6c63ff;
         text-decoration: none;
+
+        &:hover {
+            color: #574fd6;
+        }
     }
 }

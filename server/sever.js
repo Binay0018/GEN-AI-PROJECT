@@ -5,7 +5,9 @@ const app = express();
 const authRoutes = require('./routes/auth.routes');
 const cookieParser = require('cookie-parser');
 const cors = require('cors'); // ✅ import
-
+const { invokeGenAI } = require('./services/ai.service');
+const {resume, jobDescription, selfDescription} = require('./services/temps');
+const interviewRoutes = require('./routes/interview.routes');
 // ✅ Add before all routes
 app.use(cors({
     origin: 'http://localhost:5173', // your React app
@@ -16,8 +18,10 @@ app.use(cookieParser());
 app.use(express.json());
 
 connectDB();
-
+// invokeGenAI();
 app.use('/api/auth', authRoutes);
+app.use('/api/', interviewRoutes);
+
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000');

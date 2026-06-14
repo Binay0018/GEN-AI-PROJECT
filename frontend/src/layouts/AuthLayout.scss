@@ -1,0 +1,40 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.auth-layout {
+  min-height: 100vh;
+  @include flex-center;
+  position: relative;
+  overflow: hidden;
+
+  &__glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+
+    &--1 {
+      width: 400px;
+      height: 400px;
+      background: rgba($color-primary, 0.12);
+      top: -100px;
+      left: -100px;
+    }
+
+    &--2 {
+      width: 350px;
+      height: 350px;
+      background: rgba($color-secondary, 0.1);
+      bottom: -80px;
+      right: -80px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 420px;
+    padding: 1.5rem;
+  }
+}

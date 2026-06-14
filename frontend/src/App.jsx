@@ -1,16 +1,21 @@
-import { RouterProvider } from "react-router"
-import {router} from "./app.routes.jsx"
-import { AuthProvider } from "./features/auth/auth.context.jsx"
-import { useAuth } from "./features/auth/hooks/useAuth.js"
+import { RouterProvider } from 'react-router';
+import { router } from './routes';
+import { AuthProvider } from './context/AuthContext';
+import { InterviewProvider } from './context/InterviewContext';
+import { ToastProvider } from './context/ToastContext';
+import ToastNotification from './components/ui/ToastNotification';
 
 function App() {
-  
-  return(
-
-    <AuthProvider >
-    <RouterProvider router={router} />
+  return (
+    <AuthProvider>
+      <InterviewProvider>
+        <ToastProvider>
+          <RouterProvider router={router} />
+          <ToastNotification />
+        </ToastProvider>
+      </InterviewProvider>
     </AuthProvider>
-  )
+  );
 }
 
-export default App
+export default App;

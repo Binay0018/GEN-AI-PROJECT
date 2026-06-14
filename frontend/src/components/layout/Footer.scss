@@ -1,0 +1,86 @@
+@use '../../styles/variables' as *;
+
+.footer {
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid $border-color;
+  margin-top: auto;
+
+  &__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+  }
+
+  &__logo {
+    font-size: 1.5rem;
+    color: $color-primary;
+  }
+
+  &__tagline {
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: $text-muted;
+    margin-top: 0.25rem;
+  }
+
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+
+    h4 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: $text-secondary;
+      margin-bottom: 0.25rem;
+    }
+
+    a {
+      font-size: 0.875rem;
+      color: $text-muted;
+      text-decoration: none;
+      transition: color $transition-fast;
+
+      &:hover { color: $text-primary; }
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid $border-color;
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+
+    p {
+      font-size: 0.8125rem;
+      color: $text-muted;
+    }
+  }
+}

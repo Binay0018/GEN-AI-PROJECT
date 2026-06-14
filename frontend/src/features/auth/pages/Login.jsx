@@ -17,7 +17,7 @@ const Login = () => {
             return;
         }
         await login({ email, password });
-        navigate('/profile');
+        navigate('/');
     };
 
     if (loading) {

@@ -1,0 +1,62 @@
+@use '../../styles/variables' as *;
+
+.sw-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+
+  &__col {
+    padding: 1.5rem;
+    background: $bg-card;
+    border: 1px solid $border-color;
+    border-radius: $radius-lg;
+
+    h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+
+      svg { font-size: 1.125rem; }
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+    }
+
+    li {
+      font-size: 0.875rem;
+      color: $text-secondary;
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.5;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.5em;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $color-success;
+      }
+    }
+
+    &--weak li::before {
+      background: $color-warning;
+    }
+
+    h3 svg { color: $color-success; }
+    &--weak h3 svg { color: $color-warning; }
+  }
+}
